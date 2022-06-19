@@ -28,7 +28,7 @@ Users should be able to:
 
 ### Screenshot
 
-![Design preview for the Tip calculator app coding challenge](./design/desktop-preview.jpg)
+![Design preview for the Tip calculator app coding challenge](./public/design/desktop-preview.jpg)
 
 ### Links
 

@@ -1,0 +1,11 @@
+.calcuator {
+  width: var(--calculator-width);
+  max-width: var(--calculator-max-width);
+  padding: var(--calculator-padding);
+  background-color: var(--Neutral-White);
+  border-radius: var(--calculator-border-radius);
+  display: flex;
+  flex-direction: var(--calculator-flex-direction);
+  gap: 2rem;
+  margin: var(--calculator-margin);
+}

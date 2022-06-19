@@ -5,55 +5,35 @@ import Inputs from "./Inputs";
 import "./Calculator.css";
 
 export default function Calculator() {
-  // so we have here our tip calculator
-  // we need to get inputs from user
-  // we have to measure amount of whole tip from whole bill number
-  // we have to divide whole bill to number of people
-  // also we have to divide whole tip between number of people
-
   const [bill, setBill] = useState(0);
-  // const [tipPercent, setTipPercent] = useState({
-  //   predefined: 15,
-  //   custom: "",
-  // });
   const [tipPer, setTipPer] = useState(15);
   const [customTip, setCustomTip] = useState("");
-  const [NoP, setNoP] = useState(0); //this NoP means "Number of People"//
+  const [NoP, setNoP] = useState(0); // NoP means "Number of People"//
   const [error, setError] = useState(false);
   const [calculation, setCalculation] = useState({
     tipPerPerson: 0,
     totalPerPerson: 0,
   });
 
-  function billOnChange(e) {
-    setBill(e.target.value);
-  }
-
-  // function tipPercentOnChange(e) {
-  //   setTipPercent(() => {
-  //     return e.target.name === "custom"
-  //       ? { predefined: "", custom: parseInt(e.target.value) }
-  //       : { predefined: parseInt(e.target.value), custom: "" };
-  //   });
-  // }
-  function tipPercentOnClick(e) {
-    // console.log(e.target.value);
-    setCustomTip("");
-    setTipPer(parseInt(e.target.value));
-  }
-  // console.log(customTip);
-  // console.log(tipPer);
-
   function customTipOnChange(e) {
     setTipPer(0);
     const value = parseInt(e.target.value);
-    if (typeof value === "number") {
-      setCustomTip(value);
+    if (!(value === "")) {
+      if (typeof value === "number") {
+        setCustomTip(value);
+      }
     }
   }
 
   function NoPOnChange(e) {
-    setNoP(parseInt(e.target.value));
+    const value = e.target.value;
+    if (!(value === "")) {
+      setError(false);
+      setNoP(parseInt(value));
+    } else {
+      setError(true);
+      setNoP(0);
+    }
   }
 
   function tipCalculatorPerPerson(bill, tipPercent, people) {
@@ -69,49 +49,17 @@ export default function Calculator() {
     return totalPerPerson;
   }
 
-  //first edition:
-  // useEffect(() => {
-  //   setCalculation((preValues) => {
-  //     let newCalculation = preValues;
-  //     if (bill && NoP) {
-  //       return tipPercent.custom === ""
-  //         ? (newCalculation = {
-  //             tipPerPerson: tipCalculatorPerPerson(
-  //               bill,
-  //               tipPercent.predefined,
-  //               NoP
-  //             ),
-  //             totalPerPerson: totalShareCalculatorPerPerson(
-  //               bill,
-  //               tipPercent.predefined,
-  //               NoP
-  //             ),
-  //           })
-  //         : (newCalculation = {
-  //             tipPerPerson: tipCalculatorPerPerson(
-  //               bill,
-  //               tipPercent.custom,
-  //               NoP
-  //             ),
-  //             totalPerPerson: totalShareCalculatorPerPerson(
-  //               bill,
-  //               tipPercent.custom,
-  //               NoP
-  //             ),
-  //           });
-  //     }
-  //     return newCalculation;
-  //   });
-  // }, [NoP, bill, tipPercent, error]);
-
   //second edition:
   useEffect(() => {
     setCalculation((preValues) => {
       let newCalculation = preValues;
-
       if (bill > 0) {
-        if (NoP === 0) {
+        if (NoP === 0 || typeof NoP === "string") {
           setError(true);
+          setCalculation({
+            tipPerPerson: 0,
+            totalPerPerson: 0,
+          });
         } else {
           setError(false);
           return !customTip
@@ -148,19 +96,19 @@ export default function Calculator() {
     });
   }
 
-  // console.log(tipPercent);
-
   return (
     <div className="calcuator">
       <Inputs
-        billOnChange={billOnChange}
+        billOnChange={(e) => setBill(e.target.value)}
         billValue={bill}
-        // tipPercentOnChange={tipPercentOnChange}
-        tipPercentOnClick={tipPercentOnClick}
+        tipPercentOnClick={(e) => {
+          setCustomTip("");
+          setTipPer(parseInt(e.target.value));
+        }}
         customTipOnChange={customTipOnChange}
+        NoPOnChange={NoPOnChange}
         tipPercentSelected={tipPer}
         customTipPercentValue={customTip}
-        NoPOnChange={NoPOnChange}
         NoPValue={NoP}
         error={error}
       />

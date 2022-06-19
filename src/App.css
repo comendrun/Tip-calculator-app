@@ -18,12 +18,12 @@
   --header-margin: 3rem;
 
   --calculator-width: 100%;
-  --calculator-max-width: 100%;
+  --calculator-max-width:500px;
   --calculator-padding: 0.5rem 1.5rem 2rem 1.5rem;
   --calculator-flex-direction: column;
   --calculator-border-radius: 15px 15px 0 0;
-  --calculator-margin: 0;
-  
+  --calculator-margin: auto;
+
   --calculation-con-padding: 2rem 1.5rem;
   --calculation-amounts-font-size: 2rem;
   --calculation-min-width: auto;
@@ -41,8 +41,8 @@
     --calculator-max-width: 835px;
     --calculator-margin: 2rem auto;
     --calculator-border-radius: 15px;
-    --calculator-padding:2rem;
-    
+    --calculator-padding: 2rem;
+
     --calculation-con-padding: 2.5rem 1.5rem;
     --calculation-min-width: 375px;
 
@@ -72,18 +72,17 @@ body {
   font-family: var(--font-family-space-mono);
   margin: var(--root-margin);
   font-weight: 700;
-  /* border: 1px solid black; */
+
   min-height: 100vh;
   display: flex;
 }
 
 .App {
-  /* border: 1px solid red; */
   width: 100%;
   min-height: 100%;
   display: flex;
   flex-direction: column;
-  /* border: 1px solid red; */
+
   gap: 1rem;
   margin: auto;
 }

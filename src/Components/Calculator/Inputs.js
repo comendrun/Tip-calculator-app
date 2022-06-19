@@ -4,6 +4,7 @@ import dollarIcon from "../../images/icon-dollar.svg";
 import personIcon from "../../images/icon-person.svg";
 
 export default function Inputs(props) {
+  // with this function, when i call it on two of full length inputs, i assing a background-image with css on them and also assigng a couple od styles to that image
   function fullInputsBackground(icon) {
     let style = {
       backgroundImage: `url(${icon})`,
@@ -34,8 +35,6 @@ export default function Inputs(props) {
           value={props.billValue}
           min="0"
         />
-        {/* <img src={dollarIcon} alt="" /> */}
-        {/* end of bill-con div ==> */}
       </div>
       <div className="input-cons tip--percentage-con">
         <p className="headings">Select Tip %</p>
@@ -99,6 +98,7 @@ customTipOnChange */}
             name="custom"
             onChange={props.customTipOnChange}
             value={props.customTipPercentValue}
+            min="0"
           />
           {/* end of percentages-con-grid div ==> */}
         </div>
@@ -115,7 +115,7 @@ customTipOnChange */}
           className={`inputs--number-of-people--input full-input number-input ${
             props.error && "alert-input"
           }`}
-          placeholder="1"
+          placeholder="0"
           type="number"
           name="bill"
           style={fullInputsBackground(personIcon)}

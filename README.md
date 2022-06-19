@@ -49,10 +49,6 @@ Users should be able to:
 
 I used this opportunity to practice my ReactJs knowledge and also CSS Custom-Properties. I managed to do all CSS responsiveness with only CSS Custom Properties and I really liked it. it felt amazing to only change a couple of things and Voila! now it works both in mobile mode and also desktop mode.
 
-Use this section to recap over some of your major learnings while working through this project. Writing these out and providing code samples of areas you want to highlight is a great way to reinforce your own knowledge.
-
-To see how you can add code snippets, see below:
-
 ### Continued development
 
 I definitely would want to cut off some of my repeated code and also reach the goal with much fewer lines of code. Maybe I have to try using useRef, but that was not something I intended for this challenge.

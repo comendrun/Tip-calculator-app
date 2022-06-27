@@ -1,0 +1,63 @@
+ // setCalculation((preValues) => {
+    //   let newCalculation = preValues;
+
+    //   if (bill <= 0) {
+    //     setError(false);
+    //     return newCalculation;
+    //   }
+
+    //   if (NoP === 0) {
+    //     setError(true);
+    //     setCalculation({
+    //       tipPerPerson: 0,
+    //       totalPerPerson: 0,
+    //     });
+
+    //     return newCalculation;
+    //   }
+
+    //   setError(false);
+    //   const calculationResult = !customTip
+    //     ? (newCalculation = {
+    //         tipPerPerson: tipCalculatorPerPerson(bill, tipPer, NoP),
+    //         totalPerPerson: totalShareCalculatorPerPerson(bill, tipPer, NoP),
+    //       })
+    //     : (newCalculation = {
+    //         tipPerPerson: tipCalculatorPerPerson(bill, customTip, NoP),
+    //         totalPerPerson: totalShareCalculatorPerPerson(bill, customTip, NoP),
+    //       });
+
+    //   setCalculation(calculationResult);
+
+    //   // if (bill > 0) {
+    //   //   if (NoP === 0 || typeof NoP === "string") {
+    //   //     setError(true);
+    //   //     setCalculation({
+    //   //       tipPerPerson: 0,
+    //   //       totalPerPerson: 0,
+    //   //     });
+    //   //   } else {
+    //   //     setError(false);
+    //   //     return !customTip
+    //   //       ? (newCalculation = {
+    //   //           tipPerPerson: tipCalculatorPerPerson(bill, tipPer, NoP),
+    //   //           totalPerPerson: totalShareCalculatorPerPerson(
+    //   //             bill,
+    //   //             tipPer,
+    //   //             NoP
+    //   //           ),
+    //   //         })
+    //   //       : (newCalculation = {
+    //   //           tipPerPerson: tipCalculatorPerPerson(bill, customTip, NoP),
+    //   //           totalPerPerson: totalShareCalculatorPerPerson(
+    //   //             bill,
+    //   //             customTip,
+    //   //             NoP
+    //   //           ),
+    //   //         });
+    //   //   }
+    //   // } else {
+    //   //   setError(false);
+    //   // }
+    //   // return newCalculation;
+    // });
